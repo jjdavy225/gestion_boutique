@@ -19,6 +19,7 @@ class CreateApprovisionnementsTable extends Migration
                 ->nullOnDelete()->cascadeOnUpdate();
             $table->string('code');
             $table->string('designation');
+            $table->double('prix');
             $table->timestamps();
         });
     }
