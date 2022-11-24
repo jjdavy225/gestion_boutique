@@ -24,7 +24,6 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        
     }
 
     /**
@@ -35,28 +34,27 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'libelle'=> 'required|max:25',
-            'prix_vente'=> 'required|max:25',
-            'volume'=> 'required|max:25',
+        $request->validate(
+            [
+                'libelle' => 'required|max:25',
+                'prix_vente' => 'required|max:25',
+                'volume' => 'required|max:25',
             ]
         );
 
-        $article= new Article();
+        $article = new Article();
         $article->libelle = $request->libelle;
         $article->prix_vente = $request->prix_vente;
         $article->volume = $request->volume;
         $article->save();
 
-        if( $article){
+        if ($article) {
             $msg = "L'article $request->libelle a été ajouté avec succès!";
             $etat = 'success';
-        }else{
+        } else {
             $msg = 'Erreur! Veuillez réesayer SVP et verifier votre connexion';
             $etat = 'warning';
         }
-
-
     }
 
     /**
