@@ -1,0 +1,56 @@
+.form {
+    border-radius: 10px;
+    /* margin-top: 8%; */
+    width: 70%;
+    margin: 47px auto;
+    /* height: 408px; */
+    text-align: center;
+    background: #FFFFFF;
+    box-shadow: 10px 10px 15px rgb(0 0 0 / 21%);
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.form div{
+    width: 50%;
+    padding: 15px;
+}
+
+input{
+    border: none;
+    border-bottom: 2px solid  #326EF5;;
+    width: 80%;
+    margin-top: 15px;
+    height: 50px;
+    outline: none;
+}
+
+input[type="submit"]{
+    width: 50%;
+    color: white;
+    background-color: #38b6ff;
+}
+
+textarea{
+    width: 80%;
+}
+
+label{  
+    cursor: pointer;
+}
+
+@media only screen and (max-width : 800px) {
+    .form{
+        flex-direction: column;
+    }
+
+    .form div{
+        width: 100%;
+        padding: 15px;
+    }
+    
+    input{
+        width: 100%;
+    }
+}
