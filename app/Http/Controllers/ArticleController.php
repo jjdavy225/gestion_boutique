@@ -14,7 +14,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view("article");
+        return view("article.index");
     }
 
     /**
@@ -24,6 +24,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
+        return view("article.create");
     }
 
     /**
@@ -49,11 +50,9 @@ class ArticleController extends Controller
         $article->save();
 
         if ($article) {
-            $msg = "L'article $request->libelle a été ajouté avec succès!";
-            $etat = 'success';
+            return redirect()->route('article.index')->with('toast_success','Article enregistré avec succès !');
         } else {
-            $msg = 'Erreur! Veuillez réesayer SVP et verifier votre connexion';
-            $etat = 'warning';
+            return back()->with('toast_error','Un problème est survenue');
         }
     }
 
@@ -65,7 +64,7 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('article.show');
     }
 
     /**
@@ -76,7 +75,7 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('article.edit');
     }
 
     /**

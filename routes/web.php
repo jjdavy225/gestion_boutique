@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\Article;
-use App\Models\Fournisseur;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\FournisseurController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,5 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/Boutique/Article',[Article::class,'store'])->name('article_store');
-Route::post('/Boutique/fournisseur',[Fournisseur::class,'store'])->name('article_store');
+Route::resource('article',ArticleController::class);
+Route::resource('fournisseur',FournisseurController::class);
