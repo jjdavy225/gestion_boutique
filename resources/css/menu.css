@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    background-color: white;
+    height: inherit;
+    font-size: 16px;
+}
+
+.resume{
+    top: 100px;
+    margin: -100px auto 0 auto;
+    width: 40%;
+    height: 200px;
+    border-radius: 20px;
+    background-color: #344955;
+}
+
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /*C'est 3 lignes en haut permettent la disposition des elements (le retour a la ligne, la dispo au centre)*/
+    /* border: 2px solid black; */
+    padding: 50px;
+}
+
+a {
+    /* text-align: center; */
+    display: flex;
+    margin: 15px;
+    width: 22.7%;
+    height: 80px;
+    background: whitesmoke;
+    border-radius: 30px;
+    box-shadow: 10px 10px 15px rgb(0 0 0 / 10%);
+    align-items: center;
+    justify-content: space-around;
+    text-decoration: none;
+    color: black;
+}
+
+.item h2 {
+    margin: auto;
+}
