@@ -47,7 +47,7 @@ class ArticleController extends Controller
         $article->volume = $request->volume;
         $article->save();
 
-
+        return redirect()->route('article.index')->with('toast_success', 'Article enrgistré avec succès !');
     }
 
     /**
