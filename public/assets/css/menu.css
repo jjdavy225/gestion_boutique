@@ -32,6 +32,7 @@ body{
     justify-content: space-around; /*C'est 3 lignes en haut permettent la disposition des elements (le retour a la ligne, la dispo au centre)*/
     /* border: 2px solid black; */
     padding: 50px;
+    margin: 0 100px;
 }
 
 a {
