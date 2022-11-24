@@ -1,3 +1,7 @@
+.articles{
+    margin: 50px;
+}
+
 .articles h1 {
     text-align:center;
 }
@@ -31,7 +35,7 @@
     clear:right;
     display:grid;
     grid-template-columns:1fr 1fr;
-    grid-gap:1rem;
+    grid-gap:2rem;
 }
 .articles .item {
     width:100%;
@@ -90,11 +94,21 @@
 }
 
 @media screen and (min-width:64em){
+    .articles{
+        margin: auto 150px;
+    }
     .articles .filters {
         max-width:50%;
     }
     .articles .list-wrapper {
         grid-template-columns:1fr 1fr 1fr 1fr;
+        grid-gap:1.75rem;
+    }
+}
+
+@media screen and (max-width:460px){
+    .articles .list-wrapper {
+        grid-template-columns:1fr ;
         grid-gap:1.75rem;
     }
 }
