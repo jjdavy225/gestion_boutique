@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Models\Article;
 use Illuminate\Http\Request;
 
@@ -14,7 +12,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view("article");
+        return view('article.create');
     }
 
     /**
@@ -24,6 +22,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
+        return view('article.create');
     }
 
     /**
@@ -43,18 +42,12 @@ class ArticleController extends Controller
         );
 
         $article = new Article();
-        $article->libelle = $request->libelle;
+        $article->libele = $request->libele;
         $article->prix_vente = $request->prix_vente;
         $article->volume = $request->volume;
         $article->save();
 
-        if ($article) {
-            $msg = "L'article $request->libelle a été ajouté avec succès!";
-            $etat = 'success';
-        } else {
-            $msg = 'Erreur! Veuillez réesayer SVP et verifier votre connexion';
-            $etat = 'warning';
-        }
+        
     }
 
     /**
@@ -65,7 +58,7 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -76,7 +69,7 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
