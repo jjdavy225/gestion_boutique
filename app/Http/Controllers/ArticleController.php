@@ -12,7 +12,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('article.create');
+        return view("article.index");
     }
 
     /**
@@ -47,7 +47,7 @@ class ArticleController extends Controller
         $article->volume = $request->volume;
         $article->save();
 
-        
+        return redirect()->route('article.index')->with('toast_success', 'Article enrgistré avec succès !');
     }
 
     /**
@@ -58,7 +58,7 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        
+        return view('article.show');
     }
 
     /**
@@ -69,7 +69,7 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        
+        return view('article.edit');
     }
 
     /**
