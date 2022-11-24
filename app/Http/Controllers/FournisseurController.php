@@ -15,8 +15,8 @@ class FournisseurController extends Controller
      */
     public function index()
     {
-        $fournisseur= Fournisseur::all();
-        return view('article.index');
+        $fournisseurs = Fournisseur::all();
+        return view('fournisseur.index', compact('fournisseurs'));
     }
 
     /**
@@ -26,7 +26,7 @@ class FournisseurController extends Controller
      */
     public function create()
     {
-        return view('article.create');
+        return view('fournisseur.create');
     }
 
     /**
@@ -106,9 +106,9 @@ class FournisseurController extends Controller
         $fournisseur->localisation = $request ->localisation;
         $fournisseur->save();
         if( $fournisseur){
-            return redirect()->route('fournisseur.index')->with('toast_success', 'Article enrgistré avec succès !');
+            return redirect()->route('fournisseur.index')->with('toast_success', 'Fournisseur enrgistré avec succès !');
         }else{
-            return redirect()->back()->with('toast_error', 'une erreur est survenue !');
+            return redirect()->back()->with('toast_error', 'Une erreur est survenue !');
         }
     }
 
