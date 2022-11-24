@@ -53,7 +53,7 @@ class ArticleController extends Controller
             return redirect()->back()->with('toast_error', 'Article non enrgistré !');
         }
 
-        
+
     }
 
     /**
@@ -89,7 +89,7 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $article = Article::find( $id );
         $request->validate(
             [
@@ -100,7 +100,7 @@ class ArticleController extends Controller
         );
 
         $article = new Article();
-        $article->libele = $request->libele;
+        $article->libele = $request->libelle;
         $article->prix_vente = $request->prix_vente;
         $article->volume = $request->volume;
         $article->save();
@@ -120,15 +120,15 @@ class ArticleController extends Controller
     public function destroy($id)
     {
         $article = Article::find( $id );
-        
+
         if( $article){
             $article->delete();
             return redirect()->back()->with('toast_success', 'Article bien supprimé !');
         }else{
             return redirect()->back()->with('toast_error', 'Article non supprimé !');
         }
-        
 
-       
+
+
     }
 }
