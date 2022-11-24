@@ -66,7 +66,8 @@ class FournisseurController extends Controller
      */
     public function show($id)
     {
-        //
+        $fournisseur = Fournisseur::find($id);
+        return view('fournisseur.show', compact('fournisseur'));
     }
 
     /**
@@ -77,7 +78,8 @@ class FournisseurController extends Controller
      */
     public function edit($id)
     {
-        //
+        $fournisseur = Fournisseur::find($id);
+        return view('fournisseur.edit', compact('fournisseur'));
     }
 
     /**
@@ -100,6 +102,8 @@ class FournisseurController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $fournisseur = Fournisseur::find($id);
+        $fournisseur->delete();
+        return back()->with('toast_success','Fournisseur supprimé avec succès !');
     }
 }
