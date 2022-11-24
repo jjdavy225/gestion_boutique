@@ -13,7 +13,7 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::all();
-        return view('', compact(''));
+        return view('article', compact('articles') );
     }
 
     /**
@@ -59,7 +59,9 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        
+        $id = $id;
+        $article = Article::where( 'id', $id )->first();
+        return view('', compact('article'));
     }
 
     /**
@@ -70,7 +72,7 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        
+        //
     }
 
     /**
@@ -82,7 +84,21 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $id = $id;
+        $article = Article::where( 'id', $id )->first();
+        $request->validate(
+            [
+                'libelle' => 'required|max:25',
+                'prix_vente' => 'required|max:25',
+                'volume' => 'required|max:25',
+            ]
+        );
+
+        $article = new Article();
+        $article->libele = $request->libele;
+        $article->prix_vente = $request->prix_vente;
+        $article->volume = $request->volume;
+        $article->save();
     }
 
     /**
@@ -93,6 +109,9 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $id = $id;
+        $article = Article::where( 'id', $id )->first();
+        $article->delete();
+
     }
 }
