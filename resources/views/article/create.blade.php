@@ -22,7 +22,7 @@
                 <form action="" class="form">
                     <div id="appro" class="image">
                         <img
-                        src="{{asset("assets/img/boxes-amico.svg")}}"
+                        src="{{asset("assets/img/boxes-animate.svg")}}"
                         alt="un"
                         height="100%"
                         width="100%"
@@ -32,20 +32,24 @@
                     <div class="formulaire">
                         <p>
                             <!-- <label for="desi">Désignation</label><br> -->
-                            <input type="text" value="{{old('libele')}}"   name="libele" id="desi" placeholder="Désignation" />
+                            <input class="other_input" type="text" value="{{old('libele')}}"   name="libele" id="desi" placeholder="Désignation" />
                         </p>
                         <p>
                             <!-- <label for="quant">Quantité </label><br> -->
-                            <input type="number" value="{{old('volume')}}"   name="volume" id="quant" placeholder="Quantité " />
+                            <input class="other_input" type="number" value="{{old('volume')}}"   name="volume" id="quant" placeholder="Quantité " />
                         </p>
 
                         <p>
                             <!-- <label for="visa_vend">Visa vendeur</label><br> -->
-                            <input type="text" id="visa_vend" placeholder="Visa vendeur" />
+                            <input class="other_input" type="text" id="visa_vend" placeholder="Visa vendeur" />
                         </p>
                         <p>
                             <!-- <label for="visa_liv">Visa livreur</label><br> -->
-                            <input type="text" id="visa_liv" placeholder="Visa livreur" />
+                            <input class="other_input" type="text" id="visa_liv" placeholder="Visa livreur" />
+                        </p>
+                        <p>
+                            <!-- <label for="visa_vend">Visa vendeur</label><br> -->
+                            <input type="file" id="img_produit" accept=".jpg,.png,.jpeg" placeholder="Image produit" />
                         </p>
                         <p>
                             <label for="obser">Observations</label><br />
