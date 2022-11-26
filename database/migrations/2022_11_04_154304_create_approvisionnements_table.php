@@ -16,7 +16,7 @@ class CreateApprovisionnementsTable extends Migration
         Schema::create('approvisionnements', function (Blueprint $table) {
             $table->id();
             $table->foreignId('fournisseur_id')->constrained()
-                ->nullOnDelete()->cascadeOnUpdate();
+                ->restrictOnDelete()->cascadeOnUpdate();
             $table->string('code');
             $table->string('designation');
             $table->double('prix');
