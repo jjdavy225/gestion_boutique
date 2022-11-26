@@ -18,7 +18,7 @@
             <div class="videHaut"></div>
             <div class="resume"></div>
             <div class="menu">
-                <a href="{{route('article_index')}}">
+                <a href="{{route('article.index')}}">
                     <div class="item">
                         <h2>Stocks</h2>
                     </div>
