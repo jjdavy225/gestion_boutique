@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Fournisseur;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class FournisseurController extends Controller
      */
     public function index()
     {
-        //
+        $fournisseurs = Fournisseur::all();
+        return view('fournisseur.index', compact('fournisseurs'));
     }
 
     /**
@@ -24,7 +26,7 @@ class FournisseurController extends Controller
      */
     public function create()
     {
-        //
+        return view('fournisseur.create');
     }
 
     /**
@@ -49,11 +51,9 @@ class FournisseurController extends Controller
         $fournisseur->localisation = $request ->localisation;
         $fournisseur->save();
         if( $fournisseur){
-            $msg = "Le fournisseur $request->libelle a été ajouté avec succès!";
-            $etat = 'success';
+            return redirect()->route('article.index')->with('toast_success', 'Founisseur enregistré avec succès !');
         }else{
-            $msg = 'Erreur! Veuillez réesayer SVP et verifier votre connexion';
-            $etat = 'warning';
+            return redirect()->back()->with('toast_error', 'une erreur est survenue !');
         }
 
     }
@@ -66,7 +66,8 @@ class FournisseurController extends Controller
      */
     public function show($id)
     {
-        //
+        $fournisseur = Fournisseur::find($id);
+        return view('fournisseur.show', compact('fournisseur'));
     }
 
     /**
@@ -77,7 +78,8 @@ class FournisseurController extends Controller
      */
     public function edit($id)
     {
-        //
+        $fournisseur = Fournisseur::find($id);
+        return view('fournisseur.edit', compact('fournisseur'));
     }
 
     /**
@@ -89,7 +91,25 @@ class FournisseurController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $fournisseur= Fournisseur::find($id);
+        $request->validate([
+            'nom'=> 'required|max:25',
+            'type_marchandise'=> 'required|max:25',
+            'adresse'=> 'required|max:25',
+            'localisation'=> 'required|max:25',
+            ]
+        );
+        $fournisseur = new Fournisseur();
+        $fournisseur->nom = $request ->nom;
+        $fournisseur->type_marchandise = $request ->type_marchandise;
+        $fournisseur->adresse= $request ->adresse;
+        $fournisseur->localisation = $request ->localisation;
+        $fournisseur->save();
+        if( $fournisseur){
+            return redirect()->route('fournisseur.index')->with('toast_success', 'Fournisseur enrgistré avec succès !');
+        }else{
+            return redirect()->back()->with('toast_error', 'Une erreur est survenue !');
+        }
     }
 
     /**
@@ -100,6 +120,8 @@ class FournisseurController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $fournisseur = Fournisseur::find($id);
+        $fournisseur->delete();
+        return back()->with('toast_success','Fournisseur supprimé avec succès !');
     }
 }

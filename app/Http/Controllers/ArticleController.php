@@ -12,7 +12,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('article.create');
+        $articles= Article::all();
+        return view("article.index", compact('articles'));
     }
 
     /**
@@ -46,8 +47,13 @@ class ArticleController extends Controller
         $article->prix_vente = $request->prix_vente;
         $article->volume = $request->volume;
         $article->save();
+        if( $article){
+            return redirect()->route('article.index')->with('toast_success', 'Article enrgistré avec succès !');
+        }else{
+            return redirect()->back()->with('toast_error', 'Article non enrgistré !');
+        }
 
-        
+
     }
 
     /**
@@ -58,7 +64,8 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        
+        $article= Article::find($id);
+        return view('article.show', compact('article'));
     }
 
     /**
@@ -69,7 +76,8 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        
+        $article = Article::find( $id );
+        return view('article.edit', compact('article'));
     }
 
     /**
@@ -81,7 +89,26 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $article = Article::find( $id );
+        $request->validate(
+            [
+                'libelle' => 'required|max:25',
+                'prix_vente' => 'required|max:25',
+                'volume' => 'required|max:25',
+            ]
+        );
+
+        $article = new Article();
+        $article->libele = $request->libelle;
+        $article->prix_vente = $request->prix_vente;
+        $article->volume = $request->volume;
+        $article->save();
+        if( $article){
+            return redirect()->route('article.index')->with('toast_success', 'Article enrgistré avec succès !');
+        }else{
+            return redirect()->back()->with('toast_error', 'Article non enrgistré !');
+        }
     }
 
     /**
@@ -92,6 +119,16 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $article = Article::find( $id );
+
+        if( $article){
+            $article->delete();
+            return redirect()->back()->with('toast_success', 'Article bien supprimé !');
+        }else{
+            return redirect()->back()->with('toast_error', 'Article non supprimé !');
+        }
+
+
+
     }
 }
