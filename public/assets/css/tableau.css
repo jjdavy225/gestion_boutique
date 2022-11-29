@@ -47,7 +47,7 @@ tr:hover {
 
 .petitMenu{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin: 60px auto;
     width: inherit;
 }
@@ -62,7 +62,7 @@ tr:hover {
     padding: 12px;
     width: 150px;
     height: 65px;
-    margin: auto;
+    margin: 10px;
     cursor: pointer;
 }
 

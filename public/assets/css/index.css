@@ -21,3 +21,24 @@ body{
     height: 200px;
     background-color: #38B6FF;
 }
+
+.content{
+    display: flex;
+    flex-direction: column; /*C'est 3 lignes en haut permettent la disposition des elements (le retour a la ligne, la dispo au centre)*/
+    /* border: 2px solid black; */
+    padding: 50px;
+    margin: 1% 5%;
+}
+
+.paragraphe{
+    margin: 0;
+}
+
+@media only screen and (max-width:896px){
+    .content{
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+
+}

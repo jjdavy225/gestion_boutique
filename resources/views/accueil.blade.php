@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{ url('assets/css/menu.css') }}">
         <link rel="stylesheet" href="{{ url('assets/css/index.css') }}">
+        <link rel="stylesheet" href="{{ url('assets/css/tableau.css') }}">
         <title>Accueil - Admin</title>
     </head>
 
@@ -28,9 +29,9 @@
                         <h2>Inventaires</h2>
                     </div>
                 </a>
-                <a href="">
+                <a href="{{route('fournisseur.index')}}">
                     <div class="item">
-                        <h2>Personnels</h2>
+                        <h2>Fournisseurs</h2>
                     </div>
                 </a>
             </div>
