@@ -23,7 +23,7 @@
                 <form action="" class="form">
                     <div id="appro" class="image">
                         <img
-                        src="{{asset("assets/img/boxes-amico.jpg")}}"
+                        src="{{asset("assets/img/boxes-animate.svg")}}"
                         alt="un"
                         height="100%"
                         width="100%"
