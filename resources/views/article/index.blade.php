@@ -7,9 +7,6 @@
         <link rel="stylesheet" href="{{url('assets/css/index.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/list_article.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/tableau.css')}}">
-        {{-- <link rel="stylesheet" href="../../css/tableau.css">
-        <link rel="stylesheet" href="../../css/index.css">
-        <link rel="stylesheet" href="../../css/list_article.css"> --}}
         <title>Accueil - Admin</title>
     </head>
 
