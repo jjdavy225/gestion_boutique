@@ -12,12 +12,10 @@
 
 
     <body>
-        <header>
-
-        </header>
+        <header></header>
         <main>
             <div class="videHaut"></div>
-            <div class="menu">
+            <div class="content">
                 <h1>Listes des articles</h1>
 
                 <section id="articles" class="articles">
@@ -100,10 +98,16 @@
                             <a href="#">Lire</a>
                         </div>
                     </div>
-                </div>
                 </section>
 
+                <div class="petitMenu">
+                    <button><a href="{{route('article.create')}}">Enregistrer un article</a></button>
+                    <button><a>Lorem, ipsum.</a></button>
+                </div>
+                
+                <div class="paragraphe">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi animi cumque nesciunt illum explicabo odit labore, commodi praesentium magnam dolore iusto dolorem at vero ea quisquam, et exercitationem suscipit atque necessitatibus maiores cum quae omnis! Eius iusto veritatis sequi recusandae expedita enim numquam nostrum illo laborum dolores. Repudiandae laboriosam nisi nam est, sed repellendus tempora quia adipisci non voluptatibus rem debitis animi expedita perspiciatis praesentium aperiam necessitatibus laborum commodi delectus vero at nemo. Tempora veritatis, deleniti officiis dolor similique earum corporis nostrum molestias praesentium nihil facilis veniam sint adipisci laborum perferendis quibusdam harum dolores. Esse rem impedit quaerat officia ipsam.</div>
             </div>
+
         </main>
     </body>
     <script src="{{url('js/list_article.js')}}"></script>

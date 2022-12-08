@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{{url('assets/css/tableau.css')}}">
         <link rel="stylesheet" href="{{url('assets/css/index.css')}}">
+        <link rel="stylesheet" href="{{url('assets/css/tableau.css')}}">
         <title>Accueil - Admin</title>
     </head>
 
@@ -81,7 +81,7 @@
                 </div>
 
                 <div class="petitMenu">
-                    <button><a href="">Enregistrer un approvisionnement</a></button>
+                    <button><a href="{{route('fournisseur.create')}}">Enregistrer un approvisionnement</a></button>
                     <button><a>Lorem, ipsum.</a></button>
                 </div>
                 

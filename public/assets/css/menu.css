@@ -28,11 +28,13 @@ body{
 
 .menu{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; /*C'est 3 lignes en haut permettent la disposition des elements (le retour a la ligne, la dispo au centre)*/
+    /* flex-wrap: wrap; */
+    justify-content: space-around;
     /* border: 2px solid black; */
     padding: 50px;
     margin: 5%;
+    flex-direction: column;
+    align-items: center;
 }
 
 a {

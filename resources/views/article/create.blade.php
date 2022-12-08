@@ -16,7 +16,7 @@
         <main>
             <div class="videHaut"></div>
             <div class="menu">
-                <h1>Approvisionner les stocks</h1>
+                <h1>Ajouter un article</h1>
 
                 <!-- Formulaires d'ajout des approvisionnements -->
                 <form action="" class="form">
