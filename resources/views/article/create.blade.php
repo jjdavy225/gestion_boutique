@@ -41,7 +41,9 @@
                             <input class="other_input" type="text" name="prix_vente" id="prix_vente" placeholder="Prix de vente" />
                         </p>
 
-                        <input type="submit" value="Enregistrer">
+                        <div class="wrap">
+                          <button class="button">Enregistrer</button>
+                        </div>
 
                     </div>
 
